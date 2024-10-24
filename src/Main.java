@@ -22,13 +22,9 @@ class  Person{
       return second_name;
   }
 
-
-
-
     public void name() {
         System.out.printf("przedstawai sie");
     }
-
 }
 class Employee extends Person{
     private int salary;
@@ -41,17 +37,30 @@ class Employee extends Person{
         this.station=station;
     }
 
+    public Employee(int salery, boolean work, int station,int age,String name,String second_name,String sex ) {
+        super(age,name,second_name,sex);
+    }
 
-
-
-    public void work() {
+    public static void work() {
         System.out.printf("poracuje");
 
     }
-    public void salary() {
+    public static void salary() {
         System.out.printf("zwieksza wynagrodzenie");
     }
+}
 
+class Manager extends Employee{
+    private int number_employee;
+    public Manager(int salery,boolean work,int station,int number_employee) {
+        super(salery,work,station);
+    }
+    public static void task() {
+        System.out.printf("przydziela zadanie");
+    }
+    public static void section() {
+        System.out.println("zmienia dzial");
+    }
 
 
 }
@@ -68,8 +77,9 @@ public class Main {
         System.out.printf(person.getSecondName());
         System.out.println(person.getSex());
         person.name();
-        Employee pracownik= new Employee(34,"wojet","kobieta","tupak",45000,34,2);
-        person.work();
+        Employee pracownik= new Employee(34,"wojet","kobieta","tupak",45000,1,2);
+        Employee.work();
+        Employee.salary();
     
     
     }
